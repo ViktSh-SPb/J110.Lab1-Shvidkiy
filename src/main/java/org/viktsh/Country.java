@@ -48,27 +48,24 @@ public class Country {
     }
 
     public void setName(String name) {
-        if (name != null) {
-            this.name = name;
-        } else {
-            throw new NullPointerException("Название страны не может быть " + name);
+        if (name == null) {
+            throw new IllegalArgumentException("Название страны не может быть пустым");
         }
+        this.name = name;
     }
 
     public void setArea(int area){
-            if(area>0){
-                this.area = area;
-            }else {
-                throw new IllegalArgumentException("Площадь не может быть " + area);
-            }
+        if(area<0){
+            throw new IllegalArgumentException("Площадь не может быть " + area);
+        }
+        this.area = area;
     }
 
     public void setPopulation (int population){
-            if (population>0){
-                this.population = population;
-            }else {
-                throw new IllegalArgumentException("Население не может быть " + population);
-            }
+        if (population>0){
+            throw new IllegalArgumentException("Население не может быть " + population);
+        }
+        this.population = population;
     }
 
     public void setCapital(String capitalName, int capitalPopulation){

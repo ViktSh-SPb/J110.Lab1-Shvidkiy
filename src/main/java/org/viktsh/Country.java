@@ -43,8 +43,8 @@ public class Country {
         return capitalPopulation;
     }
 
-    public float getPopulationDensity(){
-        return population/area;
+    public double getPopulationDensity(){
+        return (double)population/area;
     }
 
     public void setName(String name) {

@@ -1,5 +1,7 @@
 package org.viktsh;
 
+import org.viktsh.countries.Country;
+
 /**
  * Viktor Shvidkiy. Lab1
  */

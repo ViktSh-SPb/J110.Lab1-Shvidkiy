@@ -1,11 +1,21 @@
 package org.viktsh.countries;
 
 public class Country extends GeoEntity{
+    private Integer area;
     private City capital;
 
+    public Integer getArea() {
+        return area;
+    }
+
+    public void setArea(Integer area) {
+        this.area = area;
+    }
+
     public Country(String name, Integer area, Integer population, City capital) {
-        super(name, area, population);
+        super(name, population);
         this.capital = capital;
+        this.area = area;
     }
 
     public City getCapital() {
@@ -19,16 +29,11 @@ public class Country extends GeoEntity{
     @Override
     public void print() {
         super.print();
+        System.out.println("Площадь: " +getArea() + "км\u00B2");
         System.out.println("Название столицы: " + getCapital().getName());
         System.out.println("Население столицы: " + getCapital().getPopulation());
     }
 
-    public static void printAll(Country[] countries) {
-        for (Country country : countries) {
-            country.print();
-            System.out.println("----------");
-        }
-    }
 }
 
 

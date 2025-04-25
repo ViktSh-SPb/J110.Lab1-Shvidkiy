@@ -1,6 +1,9 @@
 package org.viktsh;
 
+import org.viktsh.countries.City;
+import org.viktsh.countries.CityState;
 import org.viktsh.countries.Country;
+import org.viktsh.countries.GeoEntity;
 
 /**
  * Viktor Shvidkiy. Lab1
@@ -8,14 +11,16 @@ import org.viktsh.countries.Country;
 public class MainClass
 {
     public static void main( String[] args ){
-        Country[] countries = new Country[5];
+        GeoEntity[] countries = new GeoEntity[5];
 
-        countries[0] = new Country("Russia", 17100000,146700000,"Moscow",12600000);
-        countries[1] = new Country("Finland", 338000, 5500000, "Helsinki", 655000);
-        countries[2] = new Country("France", 643800, 67800000, "Paris", 2100000);
-        countries[3] = new Country("Andorra", 467000, 85400, "Andorra La Vella", 22600);
-        countries[4] = new Country("Singapore", 725, 5700000);
+        countries[0] = new Country("Russia", 17100000,146700000, new City("Moscow",12600000));
+        countries[1] = new Country("Finland", 338000, 5500000, new City("Helsinki", 655000));
+        countries[2] = new Country("France", 643800, 67800000, new City("Paris", 2100000));
+        countries[3] = new Country("Andorra", 467000, 85400, new City("Andorra La Vella", 22600));
+        countries[4] = new CityState("Singapore", 725, 5700000);
 
+        System.out.println("\u001B[33m"+" ⁕  Страны  ⁕ "+"\u001B[0m");
+        System.out.println("----------");
         Country.printAll(countries);
 
         Publisher prospect = new Publisher("Проспект", "Москва");
@@ -30,6 +35,8 @@ public class MainClass
         books[3] = new Book("C/C++. Процедурное программирование", "Полубенцева М. И.", 2017, bhv);
         books[4] = new Book("Конституция РФ", 2020, prospect);
 
+        System.out.println("\u001B[34m"+" ⁕  Книги  ⁕ "+"\u001B[0m");
+        System.out.println("----------");
         Book.printAll(books);
         bhv.setPublisherCity("Санкт-Петербург");
         Book.printAll(books);

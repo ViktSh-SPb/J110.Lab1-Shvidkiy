@@ -26,12 +26,17 @@ public class Country extends GeoEntity{
         this.capital = capital;
     }
 
+    public Double getDensity(){
+        return (double)getPopulation()/getArea();
+    }
+
     @Override
     public void print() {
         super.print();
         System.out.println("Площадь: " +getArea() + "км\u00B2");
         System.out.println("Название столицы: " + getCapital().getName());
         System.out.println("Население столицы: " + getCapital().getPopulation());
+        System.out.println("Плотность населения: " + getDensity()+ "чел./км\u00B2");
     }
 
 }

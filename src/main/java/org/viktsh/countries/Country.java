@@ -30,6 +30,7 @@ public class Country extends GeoEntity{
     public void setCapital(City capital) {
         this.capital = capital;
     }
+    public void setCapital(){this.capital = null;}
 
     public Double getDensity(){
         return (double)getPopulation()/getArea();
@@ -39,9 +40,14 @@ public class Country extends GeoEntity{
     public void print() {
         super.print();
         System.out.println("Площадь: " +getArea() + "км\u00B2");
-        System.out.println("Название столицы: " + getCapital().getName());
-        System.out.println("Население столицы: " + getCapital().getPopulation());
-        System.out.println("Плотность населения: " + getDensity()+ "чел./км\u00B2");
+        System.out.printf("Плотность населения: %.4f чел./км\u00B2\n", getDensity());
+        System.out.println("\tСтолица:");
+        if (getCapital()!=null){
+            getCapital().print();
+        }else {
+            System.out.println("Столица неизвестна");
+        }
+
     }
 
 }

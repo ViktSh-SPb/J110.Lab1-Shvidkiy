@@ -12,6 +12,11 @@ public class CityState extends GeoEntity{
     }
 
     public void setArea(Integer area) {
+        if(area==null){
+            throw new IllegalArgumentException("Площадь не должна быть null");
+        } else if (area<=0){
+            throw new IllegalArgumentException("Площадь должна быть строго больше нуля");
+        }
         this.area = area;
     }
 

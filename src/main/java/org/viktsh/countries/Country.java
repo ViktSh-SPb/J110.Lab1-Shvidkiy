@@ -1,5 +1,7 @@
 package org.viktsh.countries;
 
+import org.viktsh.exceptions.PopulationNullException;
+
 public class Country extends GeoEntity{
     private Integer area;
     private City capital;
@@ -33,6 +35,9 @@ public class Country extends GeoEntity{
     public void setCapital(){this.capital = null;}
 
     public Double getDensity(){
+        if(getPopulation()==null){
+            throw new PopulationNullException("Население неизвестно");
+        }
         return (double)getPopulation()/getArea();
     }
 
@@ -40,7 +45,11 @@ public class Country extends GeoEntity{
     public void print() {
         super.print();
         System.out.println("Площадь: " +getArea() + "км\u00B2");
-        System.out.printf("Плотность населения: %.4f чел./км\u00B2\n", getDensity());
+        try{
+            System.out.printf("Плотность населения: %.4f чел./км\u00B2\n", getDensity());
+        } catch (PopulationNullException e){
+            System.out.println("Плотность населения неизвестна:"+ e.getMessage());
+        }
         System.out.println("\tСтолица:");
         if (getCapital()!=null){
             getCapital().print();

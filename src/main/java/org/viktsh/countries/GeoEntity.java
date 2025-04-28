@@ -40,7 +40,7 @@ public abstract class GeoEntity {
 
     public void print() {
         System.out.println("Название: " + getName());
-        System.out.println("Население: "+getPopulation());
+        System.out.println("Население: "+ (getPopulation()!=null?getPopulation():"неизвестно"));
     }
 
     public static void printAll(GeoEntity[] countries) {

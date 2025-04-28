@@ -22,6 +22,11 @@ public abstract class GeoEntity {
     }
 
     public void setPopulation(Integer population) {
+        if(population==null){
+            throw new IllegalArgumentException("Население не должно быть null");
+        } else if (population<=0){
+            throw new IllegalArgumentException("Население должно быть строго больше нуля");
+        }
         this.population = population;
     }
 

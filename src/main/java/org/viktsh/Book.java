@@ -96,7 +96,7 @@ public class Book {
             }
             System.out.println();
         }
-        System.out.println("Издательство: " + publisher.getPublisherName() + ", " + publisher.getPublisherCity());
+        System.out.println("Издательство: " + publisher.getName() + ", " + publisher.getCity());
         System.out.println("Год издания: " + year);
     }
     public static void printAll(Book[] books){

@@ -38,7 +38,7 @@ public class MainClass
         System.out.println("\u001B[34m"+" ⁕  Книги  ⁕ "+"\u001B[0m");
         System.out.println("----------");
         Book.printAll(books);
-        bhv.setPublisherCity("Санкт-Петербург");
+        bhv.setCity("Санкт-Петербург");
         Book.printAll(books);
     }
 

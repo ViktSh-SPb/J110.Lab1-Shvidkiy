@@ -1,31 +1,31 @@
 package org.viktsh;
 
 public class Publisher {
-    private String publisherName;
-    private String publisherCity;
+    private String name;
+    private String city;
 
-    public Publisher (String publisherName, String publisherCity){
-        setPublisherName(publisherName);
-        setPublisherCity(publisherCity);
+    public Publisher (String name, String city){
+        setName(name);
+        setCity(city);
     }
 
-    public String getPublisherName(){return publisherName;}
+    public String getName(){return name;}
 
-    public String getPublisherCity(){return publisherCity;}
+    public String getCity(){return city;}
 
-    public void setPublisherName(String publisherName) {
-        if(publisherName!=null){
-            this.publisherName = publisherName;
+    public void setName(String name) {
+        if(name!=null){
+            this.name = name;
         }else {
-            throw new NullPointerException("Название издательства не может быть "+ publisherName);
+            throw new NullPointerException("Название издательства не может быть "+ name);
         }
     }
 
-    public void setPublisherCity(String publisherCity) {
-        if(publisherCity!=null){
-            this.publisherCity = publisherCity;
+    public void setCity(String city) {
+        if(city!=null){
+            this.city = city;
         }else {
-            throw new NullPointerException("Город не может быть "+ publisherCity);
+            throw new NullPointerException("Город не может быть "+ city);
         }
     }
 }

@@ -1,4 +1,4 @@
-package org.viktsh;
+package org.viktsh.books;
 
 public class Publisher {
     private String name;

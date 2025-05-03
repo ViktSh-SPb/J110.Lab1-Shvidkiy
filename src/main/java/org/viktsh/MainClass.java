@@ -1,5 +1,7 @@
 package org.viktsh;
 
+import org.viktsh.books.Book;
+import org.viktsh.books.Publisher;
 import org.viktsh.countries.City;
 import org.viktsh.countries.CityState;
 import org.viktsh.countries.Country;

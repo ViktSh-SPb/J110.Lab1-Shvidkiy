@@ -1,7 +1,5 @@
 package org.viktsh.countries;
 
-import org.viktsh.exceptions.PopulationNullException;
-
 public class Country extends GeoEntity{
     private Integer area;
     private City capital;

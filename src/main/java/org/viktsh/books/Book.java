@@ -92,16 +92,16 @@ public class Book {
                 System.out.print(authors[i]);
                 if (i < authors.length - 1) {
                     System.out.print(", ");
-                }
+                } else System.out.println();
             }
-            System.out.println();
         }
         System.out.println("Издательство: " + publisher.getName() + ", " + publisher.getCity());
         System.out.println("Год издания: " + year);
     }
+
     public static void printAll(Book[] books){
-        for (int i = 0; i < books.length; i++) {
-            books[i].print();
+        for (Book book : books) {
+            book.print();
             System.out.println("----------");
         }
     }

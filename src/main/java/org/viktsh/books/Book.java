@@ -52,7 +52,7 @@ public class Book {
         if (name!=null){
             this.name = name;
         }else {
-            throw new NullPointerException("Название книги не может быть "+ name);
+            throw new IllegalArgumentException("Название книги не может быть "+ name);
         }
 
     }
@@ -60,7 +60,7 @@ public class Book {
         if (publisher!=null) {
             this.publisher = publisher;
         }else {
-            throw new NullPointerException("Название издательства не может быть " + publisher);
+            throw new IllegalArgumentException("Название издательства не может быть " + publisher);
         }
     }
 
@@ -68,14 +68,14 @@ public class Book {
         if(year>0){
             this.year = year;
         }else {
-            throw new IllegalArgumentException("Год издания не может быть "+ year);
+            throw new IllegalArgumentException("Год издания не может быть "+ year + ". Год должен быть больше нуля");
         }
     }
 
     public void setAuthors(String[] authors){
         int nullPointer = 0;
         for(int i = 0; i<authors.length; i++){
-            if (authors[i] == null){nullPointer++;};
+            if (authors[i] == null){nullPointer++;}
         }
         if (nullPointer == 0){
             this.authors = authors;

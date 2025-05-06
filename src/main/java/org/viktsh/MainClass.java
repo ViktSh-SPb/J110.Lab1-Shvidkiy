@@ -41,7 +41,8 @@ public class MainClass
         System.out.println("----------");
         Book.printAll(books);
         bhv.setCity("Санкт-Петербург");
-        Book.printAll(books);
+        System.out.println("~~~ Исправил ошибку в \"БХВ\" ~~~");
+        Book.printAll(books); // Вывод изменился для всех книг, т.к. они ссылаются на один объект Publisher - bhv
     }
 
 }

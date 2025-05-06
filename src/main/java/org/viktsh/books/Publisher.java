@@ -17,7 +17,7 @@ public class Publisher {
         if(name!=null){
             this.name = name;
         }else {
-            throw new NullPointerException("Название издательства не может быть "+ name);
+            throw new IllegalArgumentException("Название издательства не может быть "+ name);
         }
     }
 
@@ -25,7 +25,7 @@ public class Publisher {
         if(city!=null){
             this.city = city;
         }else {
-            throw new NullPointerException("Город не может быть "+ city);
+            throw new IllegalArgumentException("Город не может быть "+ city);
         }
     }
 }
